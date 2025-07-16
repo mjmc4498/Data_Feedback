@@ -18,9 +18,10 @@ Este es un sistema web para registrar y gestionar el feedback de múltiples cola
 *   **Exportación:**
     *   Exportación de todos los registros en formato Excel (`.xlsx`).
 *   **Otros:**
-    *   Diseño responsivo y limpio.
+    *   Diseño responsivo y limpio con Tailwind CSS.
     *   Posibilidad de editar o eliminar registros existentes.
     *   Funciona de manera local sin necesidad de servidor.
+    *   Estructura de proyecto MVC (Modelo-Vista-Controlador).
 
 ## Guía de Descarga y Uso
 
@@ -37,14 +38,14 @@ Puedes descargar el código fuente de este repositorio de las siguientes maneras
 
 ### Uso
 
-1.  Una vez que hayas descargado el código, abre el archivo `index.html` en tu navegador web.
+1.  Una vez que hayas descargado el código, abre el archivo `app/views/index.html` en tu navegador web.
 2.  El sistema se cargará y podrás comenzar a registrar y gestionar el feedback.
 
 ## URL de GitHub Pages
 
 Puedes acceder a una versión en vivo de este sistema a través de GitHub Pages en la siguiente URL:
 
-[https://tu-usuario.github.io/tu-repositorio/](https://tu-usuario.github.io/tu-repositorio/)
+[https://tu-usuario.github.io/tu-repositorio/app/views/index.html](https://tu-usuario.github.io/tu-repositorio/app/views/index.html)
 
 **Nota:** Reemplaza `tu-usuario` y `tu-repositorio` con tu nombre de usuario de GitHub y el nombre de tu repositorio.
 
@@ -52,3 +53,5 @@ Puedes acceder a una versión en vivo de este sistema a través de GitHub Pages 
 
 *   **v1.0.0:** Versión inicial del sistema con todas las funcionalidades básicas implementadas.
 *   **v1.1.0:** Implementación de GitHub Actions para despliegue continuo en GitHub Pages y mejoras en la localización.
+*   **v1.2.0:** Mejoras en la interfaz y experiencia de usuario con un enfoque minimalista.
+*   **v2.0.0:** Refactorización a una arquitectura MVC, integración de Tailwind CSS y mejoras generales de la estructura del proyecto.
