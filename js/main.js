@@ -8,9 +8,9 @@ function addChecklistItem(button) {
     const inputGroup = document.createElement('div');
     inputGroup.className = 'input-group mb-2';
     inputGroup.innerHTML = `
-        <input type="text" class="form-control" placeholder="Nueva mejora">
+        <input type="text" class="form-control" placeholder="Añadir mejora">
         <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button" onclick="addChecklistItem(this)">Agregar</button>
+            <button class="btn btn-outline-secondary" type="button" onclick="addChecklistItem(this)">Añadir</button>
         </div>
     `;
     if (button) {
@@ -44,9 +44,9 @@ document.getElementById('feedback-form').addEventListener('submit', function(e) 
     this.reset();
     document.getElementById('checklist-container').innerHTML = `
         <div class="input-group mb-2">
-            <input type="text" class="form-control" placeholder="Nueva mejora">
+            <input type="text" class="form-control" placeholder="Añadir mejora">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" onclick="addChecklistItem(this)">Agregar</button>
+                <button class="btn btn-outline-secondary" type="button" onclick="addChecklistItem(this)">Añadir</button>
             </div>
         </div>
     `;
@@ -190,7 +190,7 @@ function exportToExcel() {
         'PO Asignado': fb.po,
         Comentarios: fb.comments,
         Fecha: fb.date,
-        Mejoras: fb.checklist.map(item => `${item.text} (${item.done ? 'Hecho' : 'Pendiente'})`).join(', ')
+        Mejoras: fb.checklist.map(item => `${item.text} (${item.done ? 'Completado' : 'Pendiente'})`).join(', ')
     })));
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Feedback');
