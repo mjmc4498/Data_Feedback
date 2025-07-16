@@ -14,7 +14,11 @@ function addChecklistItem(button) {
         </div>
     `;
     if (button) {
-        button.parentElement.nextElementSibling.before(inputGroup);
+        const input = button.parentElement.previousElementSibling;
+        if (input.value.trim() !== '') {
+            button.parentElement.parentElement.insertAdjacentElement('afterend', inputGroup);
+            input.value = '';
+        }
     } else {
         container.appendChild(inputGroup);
     }
