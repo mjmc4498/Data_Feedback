@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Feedback</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Sistema de Feedback</h1>
+        <div class="card">
+            <div class="card-header">
+                Registrar Feedback
+            </div>
+            <div class="card-body">
+                <form id="feedback-form">
+                    <div class="form-group">
+                        <label for="collaborator-name">Nombre del Colaborador</label>
+                        <input type="text" class="form-control" id="collaborator-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="po-assigned">PO Asignado</label>
+                        <input type="text" class="form-control" id="po-assigned" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback-comments">Comentarios</label>
+                        <textarea class="form-control" id="feedback-comments" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback-date">Fecha del Feedback</label>
+                        <input type="date" class="form-control" id="feedback-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Checklist de Mejoras</label>
+                        <div id="checklist-container">
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" placeholder="Nueva mejora">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="addChecklistItem(this)">Agregar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-primary mt-2" onclick="addChecklistItem()">Añadir Otro</button>
+                    </div>
+                    <button type="submit" class="btn btn-success">Guardar Feedback</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                Historial de Feedback
+            </div>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="filter-collaborator">Filtrar por Colaborador</label>
+                        <select id="filter-collaborator" class="form-control">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="filter-period">Filtrar por Período</label>
+                        <select id="filter-period" class="form-control">
+                            <option value="">Todos</option>
+                            <option value="1">Último Mes</option>
+                            <option value="3">Últimos 3 Meses</option>
+                            <option value="6">Últimos 6 Meses</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4 d-flex align-items-end">
+                        <button class="btn btn-info" onclick="filterFeedback()">Filtrar</button>
+                    </div>
+                </div>
+                <button class="btn btn-primary my-2" onclick="exportToExcel()">Exportar a Excel</button>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Colaborador</th>
+                            <th>PO Asignado</th>
+                            <th>Comentarios</th>
+                            <th>Fecha</th>
+                            <th>Mejoras</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="feedback-history">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
